@@ -1,5 +1,7 @@
 //to rquire or link express npm
 const express = require('express');
+//PORT for heroku default
+const PORT = process.env.PORT || 3001;
 //to Instantiate the sercer
 const app = express();
 //this will link or require animals.json file
@@ -46,6 +48,6 @@ app.get('/api/animals', (req, res) => {
 });
 
 //this chain a method to listen and goes at end of server.js
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
